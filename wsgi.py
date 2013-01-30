@@ -1,10 +1,9 @@
 #Referenced from http://stackoverflow.com/questions/336866/how-to-implement-a-minimal-server-for-ajax-in-python
 
 import threading
-import webbrowser
 from wsgiref.simple_server import make_server
 
-FILE = 'frontend.html'
+FILE = 'botpi.html'
 PORT = 8080
 
 def test_app(environ, start_response):
@@ -30,18 +29,10 @@ def test_app(environ, start_response):
         start_response(status, headers)
         return [response_body]
 
-def open_browser():
-    """Start a browser after waiting for half a second."""
-    def _open_browser():
-        webbrowser.open('http://localhost:%s/%s' % (PORT, FILE))
-    thread = threading.Timer(0.5, _open_browser)
-    thread.start()
-
 def start_server():
     """Start the server."""
     httpd = make_server("", PORT, test_app)
     httpd.serve_forever()
 
 if __name__ == "__main__":
-    open_browser()
     start_server()
