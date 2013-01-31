@@ -10,13 +10,11 @@ class AjaxApp(object):
         return open(os.path.join(ASSETS_DIR, u'botpi.html'))
     index.exposed = True
 
-    @cherrypy.expose
-    def command(self, name):
+    def command(self, command):
         cherrypy.response.headers['Content-Type'] = 'application/json'
-        return simplejson.dumps(dict(title="Command received: %s" % name))
-    index.exposed = True        
+        return simplejson.dumps(dict(title="Command received: %s" % command))
+    command.exposed = True        
 
-    @cherrypy.expose
     def exit(self, name):
         cherrypy.engine.exit()
     index.exposed = True        
