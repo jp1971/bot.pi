@@ -24,9 +24,9 @@ var botpi = (function( app, $ ) {
 			$('a.py-tst').click(function(){
 
 				console.log('py-tst clicked.');
-				$.post("bot.pi.py", { command: "test" },
+				$.post("/submit", { command: "test" },
 					function(data) {
-						console.log("Command Received: " + data);
+						console.log(data);
 					});
 			});	
 		}

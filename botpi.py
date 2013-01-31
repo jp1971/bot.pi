@@ -6,16 +6,23 @@ import sys
 ASSETS_DIR = os.path.join(os.path.abspath("."), u"assets")
 
 class AjaxApp(object):
-    @cherrypy.expose
     def index(self):
-        return open(os.path.join(ASSETS_DIR, u'index.html'))
+        return open(os.path.join(ASSETS_DIR, u'botpi.html'))
+    index.exposed = True
 
     @cherrypy.expose
-    def submit(self, name):
+    def command(self, name):
         cherrypy.response.headers['Content-Type'] = 'application/json'
-        return simplejson.dumps(dict(title="Hello, %s" % name))
+        return simplejson.dumps(dict(title="Command received: %s" % name))
+    index.exposed = True        
 
-config = {'/media':
+    @cherrypy.expose
+    def exit(self, name):
+        cherrypy.engine.exit()
+    index.exposed = True        
+
+
+config = {'/assets':
                 {'tools.staticdir.on': True,
                  'tools.staticdir.dir': ASSETS_DIR,
                 }
