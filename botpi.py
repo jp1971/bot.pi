@@ -1,7 +1,12 @@
+#Server and AJAX includes
 import cherrypy
 import os
 import simplejson
 import sys
+
+#Servo and PWM driver includes
+#from Adafruit_PWM_Servo_Driver import PWM
+#import time
 
 ASSETS_DIR = os.path.join(os.path.abspath("."), u"assets")
 
@@ -12,7 +17,7 @@ class AjaxApp(object):
 
     def command(self, command):
         cherrypy.response.headers['Content-Type'] = 'application/json'
-        return simplejson.dumps(dict(title="Command received: %s" % command))
+        return simplejson.dumps(dict(command="%s" % command))
     command.exposed = True        
 
     def exit(self, name):

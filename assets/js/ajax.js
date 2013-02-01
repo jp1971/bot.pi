@@ -21,17 +21,39 @@ var botpi = (function( app, $ ) {
 		
 		function _init() {
 
-			$('a.py-tst').click(function(){
+			$('a.ctrl').click(function(){
+				// $(this).toggleClass('checked').siblings().removeClass('checked');
+				$('a.ctrl.active').not(this).removeClass('active');
+				$(this).toggleClass('active');
+			});
 
-				console.log('py-tst clicked.');
-				$.post("/command", { command: "test" },
-					function(data) {
-						alert(data.name);
-					});
-			});	
+			$('a.stp').click(function(){
+				$('.jumbotron a.ctrl').removeClass('active');
+			});			
+
+			$('a.fwd').click(function(){
+				$.post("/command", { command: "fwd" });
+			});
+
+			$('a.lft').click(function(){
+				$.post("/command", { command: "lft" });			
+			});
+
+			$('a.stp').click(function(){
+				$.post("/command", { command: "stp" });
+			});
+
+			$('a.rgt').click(function(){
+				$.post("/command", { command: "rgt" });			
+			});
+
+			$('a.rev').click(function(){
+
+				$.post("/command", { command: "rev" });
+			});										
 		}
 		
-		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */				
+		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /		
 		
 		/* return public-facing methods and/or vars */
 		return {
