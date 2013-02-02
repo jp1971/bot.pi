@@ -4987,9 +4987,6 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
-.accordion-inner {
-  height: 465px;
-}
 a.ctrl {
   color: black;
   cursor: pointer;
@@ -5002,8 +4999,8 @@ a.ctrl:hover {
   color: green;
 }
 a.ctrl.rev {
-  display: block;
-  margin-top: -5px;
+  position: relative;
+  top: -5px;
 }
 a.stp {
   color: black;
