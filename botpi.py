@@ -37,16 +37,16 @@ class AjaxApp(object):
         if command == 'fwd':
             pwm.setPWM(0,0,0)
 
-        else if command == 'lft':
+        elif command == 'lft':
             pwm.setPWM(0,0,0)     
 
-        else if command == 'stp':
+        elif command == 'stp':
             pwm.setPWM(0,0,0)  
 
-        else if command == 'rgt':
+        elif command == 'rgt':
             pwm.setPWM(0,0,0)  
 
-        else if command == 'rev':
+        elif command == 'rev':
             pwm.setPWM(0,0,0)                                         
 
         cherrypy.response.headers['Content-Type'] = 'application/json'
