@@ -5,7 +5,7 @@ import json as simplejson
 import sys
 
 #Servo and PWM driver includes
-#from Adafruit_PWM_Servo_Driver import PWM
+from Adafruit_PWM_Servo_Driver import PWM
 #import time
 
 # Initialise the PWM device using the default address
