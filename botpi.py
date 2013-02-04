@@ -1,7 +1,7 @@
 #Server and AJAX includes
 import cherrypy
 import os
-import simplejson
+import json as simplejson
 import sys
 
 #Servo and PWM driver includes
