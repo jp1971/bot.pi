@@ -34,20 +34,20 @@ class AjaxApp(object):
     index.exposed = True
 
     def command(self, command):
-        if command == 'fwd'
-            pwm.setPWM(,,)
+        if command == 'fwd':
+            pwm.setPWM(0,0,0)
 
-        else if command == 'lft'
-            pwm.setPWM(,,)     
+        else if command == 'lft':
+            pwm.setPWM(0,0,0)     
 
-        else if command == 'stp'
-            pwm.setPWM(,,)  
+        else if command == 'stp':
+            pwm.setPWM(0,0,0)  
 
-        else if command == 'rgt'
-            pwm.setPWM(,,)  
+        else if command == 'rgt':
+            pwm.setPWM(0,0,0)  
 
-        else if command == 'rev'
-            pwm.setPWM(,,)                                         
+        else if command == 'rev':
+            pwm.setPWM(0,0,0)                                         
 
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return simplejson.dumps(dict(command="%s" % command))
