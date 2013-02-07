@@ -35,6 +35,7 @@ class AjaxApp(object):
 
     def command(self, command):
         if command == 'fwd':
+            print 'Command received: ', command
             pwm.setPWM(9,0,600)
             pwm.setPWM(11,0,150)
 
@@ -42,9 +43,10 @@ class AjaxApp(object):
             pwm.setPWM(0,0,0)     
 
         elif command == 'stp':
+            print 'Command received: ', command
             pwm.setPWM(9,0,0)  
             pwm.setPWM(11,0,0)
-             
+
         elif command == 'rgt':
             pwm.setPWM(0,0,0)  
 
