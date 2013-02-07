@@ -8,7 +8,7 @@ import sys
 from Adafruit_PWM_Servo_Driver import PWM
 import time
 
-Initialise the PWM device using the default address
+#Initialise the PWM device using the default address
 pwm = PWM(0x40, debug=True)
 
 servoMin = 150  # Min pulse length out of 4096
@@ -35,14 +35,16 @@ class AjaxApp(object):
 
     def command(self, command):
         if command == 'fwd':
-            pwm.setPWM(0,0,0)
+            pwm.setPWM(9,0,600)
+            pwm.setPWM(11,0,150)
 
         elif command == 'lft':
             pwm.setPWM(0,0,0)     
 
         elif command == 'stp':
-            pwm.setPWM(0,0,0)  
-
+            pwm.setPWM(9,0,0)  
+            pwm.setPWM(11,0,0)
+             
         elif command == 'rgt':
             pwm.setPWM(0,0,0)  
 
