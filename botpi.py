@@ -60,4 +60,6 @@ config = {'/assets':
         }
 
 cherrypy.tree.mount(AjaxApp(), '/', config=config)
+cherrypy.server.socket_host = '0.0.0.0'
+cherrypy.server.socket_port = 80
 cherrypy.engine.start()
