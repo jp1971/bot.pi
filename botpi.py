@@ -36,8 +36,8 @@ class AjaxApp(object):
     def command(self, command):
         if command == 'fwd':
             print 'Command received: ', command
-            pwm.setPWM(9,0,600)
-            pwm.setPWM(11,0,150)
+            pwm.setPWM(9,0,675)
+            pwm.setPWM(11,0,75)
 
         elif command == 'lft':
             pwm.setPWM(0,0,0)     
@@ -51,7 +51,9 @@ class AjaxApp(object):
             pwm.setPWM(0,0,0)  
 
         elif command == 'rev':
-            pwm.setPWM(0,0,0)                                         
+            print 'Command received: ', command
+            pwm.setPWM(9,0,75)
+            pwm.setPWM(11,0,675)                                       
 
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return simplejson.dumps(dict(command="%s" % command))
