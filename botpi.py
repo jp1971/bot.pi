@@ -26,6 +26,7 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
+#Define assets directory
 ASSETS_DIR = os.path.join(os.path.abspath('.'), u'assets')
 
 class AjaxApp(object):
@@ -39,16 +40,16 @@ class AjaxApp(object):
             pwm.setPWM(11,0,75)
 
         elif command == 'lft': 
-            pwm.setPWM(9,0,675)  
-            pwm.setPWM(11,0,0)  
+            pwm.setPWM(9,0,0)
+            pwm.setPWM(11,0,75)             
 
         elif command == 'stp':
             pwm.setPWM(9,0,0)  
             pwm.setPWM(11,0,0)
 
         elif command == 'rgt':
-            pwm.setPWM(9,0,0)
-            pwm.setPWM(11,0,75)  
+            pwm.setPWM(9,0,675)  
+            pwm.setPWM(11,0,0)  
 
         elif command == 'rev':
             pwm.setPWM(9,0,75)
